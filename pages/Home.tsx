@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, PenTool, Layout, HardHat, ShieldCheck, Clock, Star } from 'lucide-react';
+import { ArrowRight, HardHat, Layout, Sofa, ShieldCheck, Clock, Star, Zap } from 'lucide-react';
 import { dbService } from '../services/dbService';
 
 export const Home: React.FC = () => {
@@ -15,7 +15,7 @@ export const Home: React.FC = () => {
       <section className="relative h-[850px] flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2000&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?q=80&w=2000&auto=format&fit=crop" 
             alt="Luxury Interior Design Mumbai" 
             className="w-full h-full object-cover opacity-80 animate-scale-in duration-1000"
           />
@@ -27,14 +27,14 @@ export const Home: React.FC = () => {
         
         <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-10">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-accent/50 bg-accent/10 backdrop-blur-md rounded-full text-accent-glow text-sm font-bold tracking-widest mb-8 animate-pulse-slow shadow-neon opacity-0 animate-fade-in-up">
-            <Star size={14} className="fill-accent text-accent" /> PREMIUM CIVIL & INTERIORS MUMBAI
+            <Star size={14} className="fill-accent text-accent" /> PREMIUM CIVIL & FURNITURE MUMBAI
           </div>
           <h1 className="text-5xl md:text-8xl font-serif font-bold mb-6 tracking-tight leading-none text-white drop-shadow-2xl opacity-0 animate-fade-in-up-delay">
             Building Your <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 drop-shadow-sm filter">Dream Space</span>
           </h1>
           <p className="text-xl md:text-2xl mb-12 text-gray-100 font-light max-w-2xl mx-auto opacity-0 animate-fade-in-up-delay-2 drop-shadow-md">
-            RC PATEL delivers precision engineering and artistic interiors. From robust foundations to luxury POP false ceilings in Mumbai.
+            RC PATEL delivers precision engineering and luxury furniture. From robust foundations to custom wardrobes and modular kitchens.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
             <Link to="/services" className="bg-accent hover:bg-amber-500 text-white px-10 py-4 rounded-full text-lg font-bold transition-all hover:scale-105 hover:shadow-neon shadow-lg flex items-center justify-center gap-2 ring-2 ring-accent/50 ring-offset-2 ring-offset-slate-900">
@@ -44,6 +44,25 @@ export const Home: React.FC = () => {
               Get Free Quote
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Infinite Marquee Section - "Revolve" Effect */}
+      <section className="bg-accent/10 border-y border-accent/20 py-4 overflow-hidden relative backdrop-blur-sm">
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-transparent to-slate-900 z-10 pointer-events-none"></div>
+        <div className="flex gap-8 whitespace-nowrap animate-marquee">
+          {[...Array(2)].map((_, i) => (
+             <React.Fragment key={i}>
+                <span className="text-xl md:text-2xl font-bold text-gray-400 dark:text-gray-300 flex items-center gap-4">
+                  <span className="text-accent">★</span> CIVIL CONSTRUCTION
+                  <span className="text-accent">★</span> POP FALSE CEILING
+                  <span className="text-accent">★</span> MODULAR KITCHEN
+                  <span className="text-accent">★</span> CUSTOM FURNITURE
+                  <span className="text-accent">★</span> HOME RENOVATION
+                  <span className="text-accent">★</span> STRUCTURAL REPAIRS
+                </span>
+             </React.Fragment>
+          ))}
         </div>
       </section>
 
@@ -63,19 +82,19 @@ export const Home: React.FC = () => {
                 icon: HardHat, 
                 title: "Civil Construction", 
                 desc: "Complete structural solutions including brickwork, plastering, and waterproofing.",
-                img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop" 
+                img: "https://images.unsplash.com/photo-1590663645852-5a3d753c1fca?q=80&w=800&auto=format&fit=crop" 
               },
               { 
                 icon: Layout, 
                 title: "POP False Ceilings", 
                 desc: "Modern cove lighting, gypsum designs, and artistic ceiling works.",
-                img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" 
+                img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop" 
               },
               { 
-                icon: PenTool, 
-                title: "Interior Design", 
-                desc: "Turnkey interior solutions, modular kitchens, and furniture design.",
-                img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?q=80&w=800&auto=format&fit=crop" 
+                icon: Sofa, 
+                title: "Furniture & Decor", 
+                desc: "Custom wardrobes, modular kitchens, beds, and luxury furniture design.",
+                img: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?q=80&w=800&auto=format&fit=crop" 
               }
             ].map((service, index) => (
               <div key={index} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-neon-strong transition-all duration-500 border border-gray-100 dark:border-slate-800 opacity-0 animate-fade-in-up bg-white dark:bg-slate-800" style={{ animationDelay: `${0.2 * (index + 1)}s` }}>
@@ -147,12 +166,24 @@ export const Home: React.FC = () => {
             <div className="absolute -inset-4 border-2 border-accent rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500 opacity-60 shadow-neon"></div>
             <div className="absolute -inset-4 border-2 border-slate-700 rounded-2xl transform -rotate-3 group-hover:-rotate-6 transition-transform duration-500 bg-slate-800"></div>
             <img 
-              src="https://images.unsplash.com/photo-1535732820275-9ffd998cac22?q=80&w=800&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" 
               alt="Construction Worker" 
               className="rounded-2xl shadow-2xl relative z-10 w-full hover:scale-[1.02] transition-transform duration-500 border border-slate-700"
             />
           </div>
         </div>
+      </section>
+
+      {/* Navigation Loop / CTA */}
+      <section className="py-20 bg-accent text-white text-center">
+         <div className="max-w-4xl mx-auto px-4">
+            <Zap size={48} className="mx-auto mb-6 text-slate-900 animate-pulse-slow" />
+            <h2 className="text-4xl font-serif font-bold mb-6 text-slate-900">Ready to see our work?</h2>
+            <p className="text-slate-900/80 text-xl mb-10 max-w-2xl mx-auto">Explore our portfolio of completed projects, from furniture to false ceilings.</p>
+            <Link to="/gallery" className="inline-flex items-center gap-2 bg-slate-900 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-110 transition-transform shadow-2xl border border-white/20">
+               Check Gallery <ArrowRight />
+            </Link>
+         </div>
       </section>
     </div>
   );

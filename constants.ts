@@ -10,8 +10,8 @@ export const DB_CONNECTION_STRING = "mongodb+srv://rc:rc@cluster0.18dj3xx.mongod
 export const SERVICES_LIST = [
   "Civil Construction",
   "POP False Ceiling",
-  "Interior Design",
-  "Renovation",
+  "Custom Furniture",
+  "Home Renovation",
   "Painting & Texture",
   "Modular Kitchen"
 ];

@@ -217,7 +217,7 @@ export const AdminDashboard: React.FC = () => {
                   >
                     <option value="Civil">Civil Construction</option>
                     <option value="POP">POP / Ceiling</option>
-                    <option value="Interior">Interior Design</option>
+                    <option value="Furniture">Furniture & Decor</option>
                   </select>
                 </div>
                 <div>

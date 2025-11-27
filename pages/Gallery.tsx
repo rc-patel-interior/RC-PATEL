@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { dbService } from '../services/dbService';
 import { PortfolioItem } from '../types';
-import { Loader2, ZoomIn } from 'lucide-react';
+import { Loader2, ZoomIn, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export const Gallery: React.FC = () => {
   const [photos, setPhotos] = useState<PortfolioItem[]>([]);
-  const [filter, setFilter] = useState<'All' | 'Civil' | 'POP' | 'Interior'>('All');
+  const [filter, setFilter] = useState<'All' | 'Civil' | 'POP' | 'Furniture'>('All');
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,12 +15,13 @@ export const Gallery: React.FC = () => {
       // Add some dummy data if empty for demo purposes
       if (data.length === 0) {
         const dummy: PortfolioItem[] = [
-          { id: '1', title: 'Modern TV Unit & Hall', category: 'Interior', imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?w=800&q=80', dateAdded: '' },
+          { id: '1', title: 'Modern TV Unit & Hall', category: 'Furniture', imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?w=800&q=80', dateAdded: '' },
           { id: '2', title: 'Luxury Villa Exterior', category: 'Civil', imageUrl: 'https://images.unsplash.com/photo-1600596542815-e495d9131435?w=800&q=80', dateAdded: '' },
-          { id: '3', title: 'POP Ceiling with Cove Light', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80', dateAdded: '' },
-          { id: '4', title: 'L-Shaped Modular Kitchen', category: 'Interior', imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&q=80', dateAdded: '' },
-          { id: '5', title: 'Commercial Building Structure', category: 'Civil', imageUrl: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80', dateAdded: '' },
-          { id: '6', title: 'Bedroom False Ceiling', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80', dateAdded: '' },
+          { id: '3', title: 'POP Ceiling with Cove Light', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&q=80', dateAdded: '' },
+          { id: '4', title: 'L-Shaped Modular Kitchen', category: 'Furniture', imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&q=80', dateAdded: '' },
+          { id: '5', title: 'Commercial Building Structure', category: 'Civil', imageUrl: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80', dateAdded: '' },
+          { id: '6', title: 'Bedroom False Ceiling', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1600607686527-6fb886090705?w=800&q=80', dateAdded: '' },
+          { id: '7', title: 'Custom Wardrobe Design', category: 'Furniture', imageUrl: 'https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?w=800&q=80', dateAdded: '' },
         ];
         setPhotos(dummy);
       } else {
@@ -38,14 +40,14 @@ export const Gallery: React.FC = () => {
         <div className="absolute inset-0 bg-accent/5"></div>
         <div className="relative z-10 animate-fade-in-up">
           <h1 className="text-4xl md:text-5xl font-serif font-bold">Our Project Gallery</h1>
-          <p className="mt-4 text-gray-400 text-lg">A showcase of our finest engineering and design work.</p>
+          <p className="mt-4 text-gray-400 text-lg">A showcase of our finest engineering and furniture work.</p>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Filters */}
         <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up-delay">
-          {['All', 'Civil', 'POP', 'Interior'].map(cat => (
+          {['All', 'Civil', 'POP', 'Furniture'].map(cat => (
             <button
               key={cat}
               onClick={() => setFilter(cat as any)}
@@ -100,6 +102,13 @@ export const Gallery: React.FC = () => {
             No photos found in this category.
           </div>
         )}
+
+        {/* Navigation Loop */}
+        <div className="mt-20 flex justify-center animate-fade-in-up">
+           <Link to="/contact" className="bg-slate-900 dark:bg-white dark:text-slate-900 text-white px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform shadow-xl hover:shadow-neon flex items-center gap-2">
+             Start Your Project <ArrowRight />
+           </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Check } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 
 const ServiceSection: React.FC<{
   title: string;
@@ -56,7 +56,7 @@ export const Services: React.FC = () => {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/20 blur-[120px] rounded-full"></div>
         <h1 className="text-4xl md:text-6xl font-serif font-bold animate-fade-in-up relative z-10">Our Services</h1>
-        <p className="mt-6 text-gray-400 max-w-2xl mx-auto px-4 text-lg animate-fade-in-up-delay relative z-10">From robust civil structures to delicate interior finishes, we handle it all.</p>
+        <p className="mt-6 text-gray-400 max-w-2xl mx-auto px-4 text-lg animate-fade-in-up-delay relative z-10">From robust civil structures to delicate furniture finishes, we handle it all.</p>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +64,7 @@ export const Services: React.FC = () => {
           title="Civil Construction"
           desc="We specialize in residential and commercial building construction. Our civil works are known for structural integrity, RCC frame structure, and high-quality brickwork typical of modern Indian architecture."
           features={['Foundation Work', 'Brick & Plastering', 'Structural Repairs', 'Waterproofing', 'Flooring & Tiling']}
-          image="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop"
+          image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
           delay="0.2s"
         />
 
@@ -72,18 +72,26 @@ export const Services: React.FC = () => {
           title="POP & False Ceiling"
           desc="Transform your space with our premium POP designs. Whether you want a minimalist look with cove lights or an ornate classical ceiling for your hall, our artisans deliver perfection."
           features={['Gypsum Ceilings', 'Grid Ceilings', 'Wall Punnings', 'Cornice Designs', 'Light Coves']}
-          image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop"
+          image="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop"
           reversed
           delay="0.4s"
         />
 
         <ServiceSection
-          title="Turnkey Interior Design"
-          desc="We provide end-to-end interior solutions. From modular kitchens with high-gloss finishes to wardrobe design and final painting, we manage everything."
-          features={['Modular Kitchens', 'Wardrobes & Furniture', 'Electrical & Plumbing', 'Painting & Textures', 'Space Planning']}
+          title="Custom Furniture & Decor"
+          desc="We provide end-to-end furniture solutions. From modular kitchens with high-gloss finishes to luxury wardrobes, sofas, and beds designed to fit your space perfectly."
+          features={['Modular Kitchens', 'Custom Wardrobes', 'Luxury Sofas', 'TV Units', 'Space Planning']}
           image="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?q=80&w=800&auto=format&fit=crop"
           delay="0.6s"
         />
+        
+        {/* Navigation Loop */}
+        <div className="mt-20 text-center animate-fade-in-up">
+           <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">Want to see examples of our furniture?</h3>
+           <Link to="/gallery" className="inline-flex items-center gap-2 text-accent font-bold text-lg hover:underline underline-offset-8 decoration-2">
+             Visit the Gallery <ArrowRight />
+           </Link>
+        </div>
       </div>
     </div>
   );

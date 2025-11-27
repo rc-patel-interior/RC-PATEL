@@ -16,7 +16,7 @@ export interface VisitorLog {
 export interface PortfolioItem {
   id: string;
   title: string;
-  category: 'Civil' | 'POP' | 'Interior';
+  category: 'Civil' | 'POP' | 'Furniture';
   imageUrl: string;
   dateAdded: string;
 }
