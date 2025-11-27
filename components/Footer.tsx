@@ -1,88 +1,112 @@
+
 import React from 'react';
-import { Hammer, Facebook, Instagram, Twitter, Mail, MapPin, Phone, MessageCircle } from 'lucide-react';
+import { Hammer, Facebook, Instagram, Twitter, Mail, MapPin, Phone, MessageCircle, ArrowRight } from 'lucide-react';
 import { APP_NAME } from '../constants';
+import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const phoneNumber = "+918976637493";
   const whatsappUrl = `https://wa.me/918976637493`;
   const telUrl = `tel:${phoneNumber}`;
   const email = "crpmumbai15@gmail.com";
-  const address = "Dr. BabaSaheb Ambedkar Nagar No. 2 Mankhurd Mumbai - 43";
+  const address = "Dr. BabaSaheb Ambedkar Nagar No. 2, Mankhurd, Mumbai - 43";
 
   return (
-    <footer className="bg-slate-900 border-t border-slate-800 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+    <footer className="bg-slate-950 text-gray-400 border-t border-slate-900 font-sans">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+          
           {/* Brand Column */}
-          <div className="animate-fade-in-up">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="bg-accent p-1.5 rounded shadow-neon">
-                 <Hammer className="h-5 w-5 text-white" />
+          <div className="space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="bg-accent p-2 rounded-lg shadow-neon">
+                 <Hammer className="h-6 w-6 text-white" />
               </div>
-              <span className="text-xl font-bold text-white font-serif">{APP_NAME}</span>
+              <span className="text-2xl font-bold text-white font-serif">{APP_NAME}</span>
             </div>
-            <p className="text-sm leading-relaxed text-gray-400 mb-6">
-              Building dreams with precision and excellence. Your trusted partner for Civil Construction, POP Design, and Interior Renovation.
+            <p className="text-sm leading-relaxed text-gray-500">
+              Your premier partner for Civil Construction, POP Design, and Custom Furniture in Mumbai. We build with precision and passion.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-accent hover:scale-110 transition-all p-2 bg-slate-800 rounded-full"><Facebook size={18} /></a>
-              <a href="#" className="hover:text-accent hover:scale-110 transition-all p-2 bg-slate-800 rounded-full"><Instagram size={18} /></a>
-              <a href="#" className="hover:text-accent hover:scale-110 transition-all p-2 bg-slate-800 rounded-full"><Twitter size={18} /></a>
+              {[Facebook, Instagram, Twitter].map((Icon, i) => (
+                <a key={i} href="#" className="bg-slate-900 p-2.5 rounded-full hover:bg-accent hover:text-white transition-all duration-300 hover:-translate-y-1">
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
           
           {/* Links Column */}
-          <div className="animate-fade-in-up delay-100">
-            <h3 className="text-lg font-bold text-white mb-4 border-b border-slate-700 pb-2 inline-block">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#/" className="hover:text-accent hover:pl-2 transition-all block py-1">Home</a></li>
-              <li><a href="#/services" className="hover:text-accent hover:pl-2 transition-all block py-1">Services</a></li>
-              <li><a href="#/gallery" className="hover:text-accent hover:pl-2 transition-all block py-1">Portfolio</a></li>
-              <li><a href="#/contact" className="hover:text-accent hover:pl-2 transition-all block py-1">Contact Us</a></li>
+          <div>
+            <h3 className="text-white font-bold text-lg mb-6 relative inline-block">
+              Quick Links
+              <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-accent"></span>
+            </h3>
+            <ul className="space-y-3">
+              {['Home', 'Services', 'Gallery', 'Contact'].map((item) => (
+                <li key={item}>
+                  <Link to={`/${item === 'Home' ? '' : item.toLowerCase()}`} className="hover:text-accent transition-colors flex items-center gap-2 group">
+                    <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 -ml-4 group-hover:ml-0 transition-all duration-300 text-accent" />
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services Column */}
+          <div>
+            <h3 className="text-white font-bold text-lg mb-6 relative inline-block">
+              Our Services
+              <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-accent"></span>
+            </h3>
+            <ul className="space-y-3 text-sm">
+              <li>Civil Construction</li>
+              <li>POP False Ceilings</li>
+              <li>Modular Kitchens</li>
+              <li>Custom Wardrobes</li>
+              <li>Waterproofing</li>
+              <li>Painting & Texture</li>
             </ul>
           </div>
 
           {/* Contact Column */}
-          <div className="animate-fade-in-up delay-200">
-            <h3 className="text-lg font-bold text-white mb-4 border-b border-slate-700 pb-2 inline-block">Contact Info</h3>
-            <ul className="space-y-4 text-sm mb-6">
-              <li className="flex items-start gap-3 group">
-                <MapPin className="text-accent flex-shrink-0 group-hover:text-white transition-colors mt-0.5" size={18} />
-                <span className="group-hover:text-white transition-colors">{address}</span>
+          <div>
+             <h3 className="text-white font-bold text-lg mb-6 relative inline-block">
+              Get In Touch
+              <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-accent"></span>
+            </h3>
+            <ul className="space-y-4 mb-6">
+              <li className="flex items-start gap-3">
+                <MapPin className="text-accent flex-shrink-0 mt-1" size={18} />
+                <span className="text-sm leading-tight">{address}</span>
               </li>
-              <li className="flex items-center gap-3 group">
-                <Mail className="text-accent flex-shrink-0 group-hover:text-white transition-colors" size={18} />
-                <span className="group-hover:text-white transition-colors">{email}</span>
+              <li className="flex items-center gap-3">
+                <Mail className="text-accent flex-shrink-0" size={18} />
+                <a href={`mailto:${email}`} className="text-sm hover:text-white transition-colors">{email}</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <Phone className="text-accent flex-shrink-0" size={18} />
+                <span className="text-sm font-bold text-white">{phoneNumber}</span>
               </li>
             </ul>
-
-            {/* Call Actions */}
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-2 text-white font-bold text-lg mb-1">
-                 <Phone className="text-accent" size={20} /> {phoneNumber}
-              </div>
-              <div className="flex gap-3">
-                <a 
-                  href={telUrl} 
-                  className="flex-1 bg-white text-slate-900 hover:bg-gray-100 font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all transform hover:scale-105 active:scale-95"
-                >
-                  <Phone size={18} /> Call
-                </a>
-                <a 
-                  href={whatsappUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-green-600 hover:bg-green-500 text-white font-bold py-2.5 px-4 rounded-lg flex items-center justify-center gap-2 transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-green-900/20"
-                >
-                  <MessageCircle size={18} /> WhatsApp
-                </a>
-              </div>
+            
+            <div className="grid grid-cols-2 gap-3">
+              <a href={telUrl} className="flex items-center justify-center gap-2 bg-white text-slate-900 py-2.5 rounded-lg font-bold text-sm hover:bg-gray-200 transition-colors">
+                 <Phone size={16} /> Call
+              </a>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] text-white py-2.5 rounded-lg font-bold text-sm hover:bg-[#20bd5a] transition-colors shadow-lg shadow-green-900/20">
+                 <MessageCircle size={16} /> WhatsApp
+              </a>
             </div>
           </div>
         </div>
-        <div className="border-t border-slate-800 mt-12 pt-8 text-center text-sm flex flex-col md:flex-row justify-between items-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} {APP_NAME}. All rights reserved.</p>
-          <p className="mt-2 md:mt-0 flex items-center gap-1">Designed with <span className="text-red-500">♥</span> for Excellence</p>
+
+        <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+          <p>&copy; {new Date().getFullYear()} {APP_NAME}. All Rights Reserved.</p>
+          <p>
+            Designed with <span className="text-red-500 animate-pulse">❤</span> for Mumbai
+          </p>
         </div>
       </div>
     </footer>

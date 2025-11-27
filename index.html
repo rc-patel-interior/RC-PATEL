@@ -6,8 +6,63 @@
     <title>RC PATEL - Civil, POP & Furniture Specialists Mumbai</title>
     <meta name="description" content="Premier Civil Construction, POP False Ceiling & Custom Furniture Design Services in Mankhurd, Mumbai. Contact RC PATEL for home renovations." />
     <meta name="keywords" content="Civil Contractor Mumbai, POP Design Mankhurd, Custom Furniture, Modular Kitchen, RC Patel, House Renovation" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <script type="importmap">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CDN for instant preview -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            },
+            colors: {
+              primary: '#0f172a', // Slate 900
+              accent: '#d97706', // Amber 600
+              'accent-glow': '#f59e0b', // Amber 500 for neon
+              dark: '#020617', // Slate 950
+            },
+            boxShadow: {
+              'neon': '0 0 15px rgba(217, 119, 6, 0.5), 0 0 30px rgba(217, 119, 6, 0.3)',
+              'neon-strong': '0 0 20px rgba(245, 158, 11, 0.8), 0 0 40px rgba(245, 158, 11, 0.4)',
+            },
+            animation: {
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'fade-in-up-delay': 'fadeInUp 0.8s ease-out 0.2s forwards',
+              'scale-in': 'scaleIn 0.5s ease-out forwards',
+              'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+              'marquee': 'marquee 25s linear infinite',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              scaleIn: {
+                '0%': { opacity: '0', transform: 'scale(0.9)' },
+                '100%': { opacity: '1', transform: 'scale(1)' },
+              },
+              slideInRight: {
+                '0%': { opacity: '0', transform: 'translateX(20px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              marquee: {
+                '0%': { transform: 'translateX(0%)' },
+                '100%': { transform: 'translateX(-100%)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+
+    <script type="importmap">
 {
   "imports": {
     "vite": "https://aistudiocdn.com/vite@^7.2.4",
@@ -17,11 +72,14 @@
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "recharts": "https://aistudiocdn.com/recharts@^3.5.0"
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "express": "https://aistudiocdn.com/express@^5.1.0",
+    "url": "https://aistudiocdn.com/url@^0.11.4"
   }
 }
 </script>
-</head>
+  </head>
   <body class="bg-gray-50 text-slate-800 dark:bg-dark dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
