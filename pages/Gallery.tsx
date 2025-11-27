@@ -14,12 +14,12 @@ export const Gallery: React.FC = () => {
       // Add some dummy data if empty for demo purposes
       if (data.length === 0) {
         const dummy: PortfolioItem[] = [
-          { id: '1', title: 'Modern Living Room', category: 'Interior', imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=600&q=80', dateAdded: '' },
-          { id: '2', title: 'Luxury Villa Structure', category: 'Civil', imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80', dateAdded: '' },
-          { id: '3', title: 'Geometric POP Ceiling', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=80', dateAdded: '' },
-          { id: '4', title: 'Modular Kitchen', category: 'Interior', imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=600&q=80', dateAdded: '' },
-          { id: '5', title: 'Commercial Complex', category: 'Civil', imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80', dateAdded: '' },
-          { id: '6', title: 'Office False Ceiling', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80', dateAdded: '' },
+          { id: '1', title: 'Modern TV Unit & Hall', category: 'Interior', imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80', dateAdded: '' },
+          { id: '2', title: 'Luxury Villa Exterior', category: 'Civil', imageUrl: 'https://images.unsplash.com/photo-1600596542815-e495d9131435?w=800&q=80', dateAdded: '' },
+          { id: '3', title: 'POP Ceiling with Cove Light', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1585128719715-46776b56a0d1?w=800&q=80', dateAdded: '' },
+          { id: '4', title: 'L-Shaped Modular Kitchen', category: 'Interior', imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&q=80', dateAdded: '' },
+          { id: '5', title: 'Commercial Building Structure', category: 'Civil', imageUrl: 'https://images.unsplash.com/photo-1531834685032-c34bf0d84c7c?w=800&q=80', dateAdded: '' },
+          { id: '6', title: 'Bedroom False Ceiling', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1595846519845-68e298c2edd8?w=800&q=80', dateAdded: '' },
         ];
         setPhotos(dummy);
       } else {

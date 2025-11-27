@@ -34,7 +34,8 @@ const Layout: React.FC<{
 };
 
 // Protected Route Component
-const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
+// Made children optional to resolve TypeScript error regarding missing children property in JSX
+const ProtectedRoute = ({ children }: { children?: React.ReactNode }) => {
   const isAdmin = localStorage.getItem('isAdmin') === 'true';
   if (!isAdmin) {
     return <Navigate to="/login" replace />;

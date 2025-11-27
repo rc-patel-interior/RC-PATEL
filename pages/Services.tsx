@@ -47,24 +47,24 @@ export const Services: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <ServiceSection
           title="Civil Construction"
-          desc="We specialize in residential and commercial building construction. Our civil works are known for structural integrity, high-quality material usage, and adherence to safety standards."
+          desc="We specialize in residential and commercial building construction. Our civil works are known for structural integrity, RCC frame structure, and high-quality brickwork typical of modern Indian architecture."
           features={['Foundation Work', 'Brick & Plastering', 'Structural Repairs', 'Waterproofing', 'Flooring & Tiling']}
-          image="https://images.unsplash.com/photo-1590074218683-9b9a6741b082?w=800&q=80"
+          image="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
         />
 
         <ServiceSection
           title="POP & False Ceiling"
-          desc="Transform your space with our premium POP designs. Whether you want a minimalist look or an ornate classical ceiling, our artisans deliver perfection."
+          desc="Transform your space with our premium POP designs. Whether you want a minimalist look with cove lights or an ornate classical ceiling for your hall, our artisans deliver perfection."
           features={['Gypsum Ceilings', 'Grid Ceilings', 'Wall Punnings', 'Cornice Designs', 'Light Coves']}
-          image="https://images.unsplash.com/photo-1594499015949-c136363c434c?w=800&q=80"
+          image="https://images.unsplash.com/photo-1595846519845-68e298c2edd8?q=80&w=800&auto=format&fit=crop"
           reversed
         />
 
         <ServiceSection
           title="Turnkey Interior Design"
-          desc="We provide end-to-end interior solutions. From planning the layout to the final coat of paint, we manage everything so you can walk into a ready-to-live space."
+          desc="We provide end-to-end interior solutions. From modular kitchens with high-gloss finishes to wardrobe design and final painting, we manage everything."
           features={['Modular Kitchens', 'Wardrobes & Furniture', 'Electrical & Plumbing', 'Painting & Textures', 'Space Planning']}
-          image="https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?w=800&q=80"
+          image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop"
         />
       </div>
     </div>

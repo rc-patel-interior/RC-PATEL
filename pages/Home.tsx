@@ -15,8 +15,8 @@ export const Home: React.FC = () => {
       <section className="relative h-[700px] flex items-center justify-center text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=2000&auto=format&fit=crop" 
-            alt="Construction Background" 
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000&auto=format&fit=crop" 
+            alt="Modern Indian House Construction" 
             className="w-full h-full object-cover opacity-80"
           />
           {/* Dark Overlay with Gradient */}
@@ -29,10 +29,10 @@ export const Home: React.FC = () => {
           </div>
           <h1 className="text-5xl md:text-8xl font-serif font-bold mb-6 tracking-tight leading-tight text-white drop-shadow-lg">
             Building Your <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-600 drop-shadow-sm">Vision</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-600 drop-shadow-sm">Dream Space</span>
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-gray-200 font-light max-w-2xl mx-auto">
-            RC PATEL delivers precision engineering and artistic interiors. From foundation to false ceilings, we craft excellence.
+            RC PATEL delivers precision engineering and artistic interiors. From robust foundations to luxury POP false ceilings.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link to="/services" className="bg-accent hover:bg-amber-500 text-white px-10 py-4 rounded-full text-lg font-bold transition-all hover:scale-105 hover:shadow-neon shadow-lg flex items-center justify-center gap-2">
@@ -60,20 +60,20 @@ export const Home: React.FC = () => {
               { 
                 icon: HardHat, 
                 title: "Civil Construction", 
-                desc: "Complete structural solutions from foundation to finishing.",
-                img: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=800&auto=format&fit=crop"
+                desc: "Complete structural solutions including brickwork, plastering, and waterproofing.",
+                img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
               },
               { 
                 icon: Layout, 
                 title: "POP False Ceilings", 
-                desc: "Modern, artistic, and durable POP designs for home & office.",
-                img: "https://images.unsplash.com/photo-1594499015949-c136363c434c?q=80&w=600&auto=format&fit=crop"
+                desc: "Modern cove lighting, gypsum designs, and artistic ceiling works.",
+                img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=800&auto=format&fit=crop"
               },
               { 
                 icon: PenTool, 
                 title: "Interior Design", 
-                desc: "Turnkey interior solutions, painting, and modular setups.",
-                img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=600&auto=format&fit=crop"
+                desc: "Turnkey interior solutions, modular kitchens, and furniture design.",
+                img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?q=80&w=800&auto=format&fit=crop"
               }
             ].map((service, index) => (
               <div key={index} className="group bg-slate-50 dark:bg-slate-800/50 rounded-2xl overflow-hidden shadow-sm hover:shadow-neon transition-all duration-300 border border-transparent hover:border-accent/50">
@@ -119,7 +119,7 @@ export const Home: React.FC = () => {
               Excellence in Every <br/><span className="text-accent">Brick & Detail</span>
             </h2>
             <p className="text-gray-400 mb-8 leading-relaxed text-lg">
-              With years of experience in the industry, we deliver quality that stands the test of time. Our team of skilled engineers and designers ensures your project is completed on time and within budget.
+              With years of experience in the Indian construction industry, we deliver quality that stands the test of time. Our team ensures your home is built with the best materials and finest finishing.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
@@ -141,7 +141,7 @@ export const Home: React.FC = () => {
             <div className="absolute -inset-4 border-2 border-accent rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500 opacity-60"></div>
             <div className="absolute -inset-4 border-2 border-slate-700 rounded-2xl transform -rotate-3 group-hover:-rotate-6 transition-transform duration-500"></div>
             <img 
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1535732759880-bbd5c7265e3f?q=80&w=800&auto=format&fit=crop" 
               alt="Construction Worker" 
               className="rounded-2xl shadow-2xl relative z-10 w-full hover:scale-[1.02] transition-transform duration-500"
             />

@@ -35,31 +35,31 @@ export const Contact: React.FC = () => {
               <h2 className="text-2xl font-bold mb-8">Contact Information</h2>
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
-                  <MapPin className="text-accent mt-1" />
+                  <MapPin className="text-accent mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-bold">Our Office</h3>
-                    <p className="text-gray-400 text-sm">123 Construction Plaza, City Center, Mumbai, India</p>
+                    <p className="text-gray-400 text-sm">Dr. BabaSaheb Ambedkar Nagar No. 2, Mankhurd, Mumbai - 43</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Phone className="text-accent mt-1" />
+                  <Phone className="text-accent mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-bold">Phone</h3>
-                    <p className="text-gray-400 text-sm">+91 98765 43210</p>
+                    <p className="text-gray-400 text-sm">+91 89766 37493</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Mail className="text-accent mt-1" />
+                  <Mail className="text-accent mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-bold">Email</h3>
-                    <p className="text-gray-400 text-sm">contact@rcpatel.com</p>
+                    <p className="text-gray-400 text-sm">crpmumbai15@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <Clock className="text-accent mt-1" />
+                  <Clock className="text-accent mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-bold">Working Hours</h3>
-                    <p className="text-gray-400 text-sm">Mon - Sat: 9:00 AM - 7:00 PM</p>
+                    <p className="text-gray-400 text-sm">Mon - Sat: 9:00 AM - 8:00 PM</p>
                   </div>
                 </div>
               </div>
