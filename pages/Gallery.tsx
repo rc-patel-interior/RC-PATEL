@@ -14,12 +14,12 @@ export const Gallery: React.FC = () => {
       // Add some dummy data if empty for demo purposes
       if (data.length === 0) {
         const dummy: PortfolioItem[] = [
-          { id: '1', title: 'Modern TV Unit & Hall', category: 'Interior', imageUrl: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80', dateAdded: '' },
+          { id: '1', title: 'Modern TV Unit & Hall', category: 'Interior', imageUrl: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?w=800&q=80', dateAdded: '' },
           { id: '2', title: 'Luxury Villa Exterior', category: 'Civil', imageUrl: 'https://images.unsplash.com/photo-1600596542815-e495d9131435?w=800&q=80', dateAdded: '' },
-          { id: '3', title: 'POP Ceiling with Cove Light', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1585128719715-46776b56a0d1?w=800&q=80', dateAdded: '' },
+          { id: '3', title: 'POP Ceiling with Cove Light', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80', dateAdded: '' },
           { id: '4', title: 'L-Shaped Modular Kitchen', category: 'Interior', imageUrl: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&q=80', dateAdded: '' },
-          { id: '5', title: 'Commercial Building Structure', category: 'Civil', imageUrl: 'https://images.unsplash.com/photo-1531834685032-c34bf0d84c7c?w=800&q=80', dateAdded: '' },
-          { id: '6', title: 'Bedroom False Ceiling', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1595846519845-68e298c2edd8?w=800&q=80', dateAdded: '' },
+          { id: '5', title: 'Commercial Building Structure', category: 'Civil', imageUrl: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80', dateAdded: '' },
+          { id: '6', title: 'Bedroom False Ceiling', category: 'POP', imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80', dateAdded: '' },
         ];
         setPhotos(dummy);
       } else {

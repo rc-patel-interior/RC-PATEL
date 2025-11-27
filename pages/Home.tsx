@@ -63,19 +63,19 @@ export const Home: React.FC = () => {
                 icon: HardHat, 
                 title: "Civil Construction", 
                 desc: "Complete structural solutions including brickwork, plastering, and waterproofing.",
-                img: "https://images.unsplash.com/photo-1641154748135-8032a61a3f80?q=80&w=800&auto=format&fit=crop" 
+                img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop" 
               },
               { 
                 icon: Layout, 
                 title: "POP False Ceilings", 
                 desc: "Modern cove lighting, gypsum designs, and artistic ceiling works.",
-                img: "https://images.unsplash.com/photo-1595846519845-68e298c2edd8?q=80&w=800&auto=format&fit=crop" 
+                img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" 
               },
               { 
                 icon: PenTool, 
                 title: "Interior Design", 
                 desc: "Turnkey interior solutions, modular kitchens, and furniture design.",
-                img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop" 
+                img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4f9d?q=80&w=800&auto=format&fit=crop" 
               }
             ].map((service, index) => (
               <div key={index} className="group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-neon-strong transition-all duration-500 border border-gray-100 dark:border-slate-800 opacity-0 animate-fade-in-up bg-white dark:bg-slate-800" style={{ animationDelay: `${0.2 * (index + 1)}s` }}>
@@ -147,7 +147,7 @@ export const Home: React.FC = () => {
             <div className="absolute -inset-4 border-2 border-accent rounded-2xl transform rotate-3 group-hover:rotate-6 transition-transform duration-500 opacity-60 shadow-neon"></div>
             <div className="absolute -inset-4 border-2 border-slate-700 rounded-2xl transform -rotate-3 group-hover:-rotate-6 transition-transform duration-500 bg-slate-800"></div>
             <img 
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop" 
+              src="https://images.unsplash.com/photo-1535732820275-9ffd998cac22?q=80&w=800&auto=format&fit=crop" 
               alt="Construction Worker" 
               className="rounded-2xl shadow-2xl relative z-10 w-full hover:scale-[1.02] transition-transform duration-500 border border-slate-700"
             />
