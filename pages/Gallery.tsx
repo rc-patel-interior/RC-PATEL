@@ -33,16 +33,18 @@ export const Gallery: React.FC = () => {
   const filteredPhotos = filter === 'All' ? photos : photos.filter(p => p.category === filter);
 
   return (
-    <div className="pt-10 pb-20 dark:bg-dark min-h-screen">
-      <div className="bg-slate-900 dark:bg-black py-16 text-center text-white mb-12 relative overflow-hidden">
+    <div className="pt-10 pb-20 dark:bg-dark min-h-screen transition-colors">
+      <div className="bg-slate-900 dark:bg-black py-20 text-center text-white mb-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-accent/5"></div>
-        <h1 className="text-4xl md:text-5xl font-serif font-bold relative z-10">Our Project Gallery</h1>
-        <p className="mt-4 text-gray-400 relative z-10">A showcase of our finest engineering and design work.</p>
+        <div className="relative z-10 animate-fade-in-up">
+          <h1 className="text-4xl md:text-5xl font-serif font-bold">Our Project Gallery</h1>
+          <p className="mt-4 text-gray-400 text-lg">A showcase of our finest engineering and design work.</p>
+        </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up-delay">
           {['All', 'Civil', 'POP', 'Interior'].map(cat => (
             <button
               key={cat}
@@ -65,7 +67,11 @@ export const Gallery: React.FC = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPhotos.map((photo, idx) => (
-              <div key={photo.id || idx} className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer bg-slate-900">
+              <div 
+                key={photo.id || idx} 
+                className="group relative rounded-2xl overflow-hidden shadow-lg cursor-pointer bg-slate-900 opacity-0 animate-fade-in-up"
+                style={{ animationDelay: `${0.1 * (idx + 1)}s` }}
+              >
                 <div className="aspect-[4/3] bg-gray-800 overflow-hidden">
                   <img 
                     src={photo.imageUrl} 
@@ -75,11 +81,11 @@ export const Gallery: React.FC = () => {
                 </div>
                 
                 {/* Overlay on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6 border-2 border-transparent group-hover:border-accent">
-                  <span className="text-accent text-xs font-bold uppercase tracking-wider mb-2">{photo.category}</span>
-                  <div className="flex justify-between items-end">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6 border-2 border-transparent group-hover:border-accent">
+                  <span className="text-accent text-xs font-bold uppercase tracking-wider mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{photo.category}</span>
+                  <div className="flex justify-between items-end translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
                     <h3 className="text-white text-xl font-bold font-serif">{photo.title}</h3>
-                    <div className="bg-accent p-2 rounded-full text-white shadow-neon">
+                    <div className="bg-accent p-2 rounded-full text-white shadow-neon hover:scale-110 transition-transform">
                       <ZoomIn size={20} />
                     </div>
                   </div>
@@ -90,7 +96,7 @@ export const Gallery: React.FC = () => {
         )}
         
         {filteredPhotos.length === 0 && !loading && (
-          <div className="text-center text-gray-500 py-10 dark:text-gray-400">
+          <div className="text-center text-gray-500 py-10 dark:text-gray-400 animate-fade-in-up">
             No photos found in this category.
           </div>
         )}

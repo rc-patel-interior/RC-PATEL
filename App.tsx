@@ -10,6 +10,15 @@ import { Contact } from './pages/Contact';
 import { Login } from './pages/Login';
 import { AdminDashboard } from './pages/AdminDashboard';
 
+// Scroll to top component
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
 // Layout wrapper to handle conditional rendering of Navbar/Footer
 const Layout: React.FC<{ 
   children: React.ReactNode; 
@@ -24,7 +33,7 @@ const Layout: React.FC<{
   return (
     <div className={`flex flex-col min-h-screen transition-colors duration-300 ${isDark ? 'dark' : ''}`}>
       {!isLoginPage && <Navbar isDark={isDark} toggleTheme={toggleTheme} />}
-      <main className="flex-grow dark:bg-dark">
+      <main className="flex-grow dark:bg-dark w-full overflow-hidden">
         {children}
       </main>
       {!isLoginPage && !isAdminRoute && <Footer />}
@@ -34,7 +43,6 @@ const Layout: React.FC<{
 };
 
 // Protected Route Component
-// Made children optional to resolve TypeScript error regarding missing children property in JSX
 const ProtectedRoute = ({ children }: { children?: React.ReactNode }) => {
   const isAdmin = localStorage.getItem('isAdmin') === 'true';
   if (!isAdmin) {
@@ -72,6 +80,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Layout isDark={isDark} toggleTheme={toggleTheme}>
         <Routes>
           <Route path="/" element={<Home />} />

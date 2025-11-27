@@ -17,7 +17,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
     { name: 'Services', path: '/services' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'Contact', path: '/contact' },
-    { name: 'Admin Panel', path: '/admin' }, // Points to protected route
+    { name: 'Admin Panel', path: '/admin' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2 group">
-              <div className="bg-accent p-2 rounded-lg group-hover:shadow-neon transition-all duration-300">
+              <div className="bg-accent p-2 rounded-lg group-hover:shadow-neon transition-all duration-300 group-hover:rotate-12">
                 <Hammer className="h-6 w-6 text-white" />
               </div>
               <span className="font-serif text-2xl font-bold tracking-wide group-hover:text-accent-glow transition-colors">{APP_NAME}</span>
@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
                 >
                   <span className="relative z-10">{link.name}</span>
                   {isActive(link.path) && (
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent shadow-neon"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent shadow-neon animate-slide-in-right"></span>
                   )}
                   <span className="absolute inset-0 bg-white/5 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left rounded-md"></span>
                 </Link>
@@ -65,7 +65,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
                 className="p-2 rounded-full hover:bg-white/10 transition-colors text-accent hover:text-white"
                 aria-label="Toggle Theme"
               >
-                {isDark ? <Sun size={20} /> : <Moon size={20} />}
+                {isDark ? <Sun size={20} className="animate-spin-slow" /> : <Moon size={20} />}
               </button>
 
               <Link to="/contact" className="bg-accent hover:bg-amber-500 text-white px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2 transition-all hover:scale-105 hover:shadow-neon">
@@ -84,7 +84,7 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
               </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none transition-colors"
             >
               {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
             </button>
@@ -94,14 +94,14 @@ export const Navbar: React.FC<NavbarProps> = ({ isDark, toggleTheme }) => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-slate-900 border-t border-slate-800">
+        <div className="md:hidden bg-slate-900 border-t border-slate-800 animate-fade-in-up origin-top">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium ${
+                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   isActive(link.path)
                     ? 'bg-slate-800 text-accent'
                     : 'text-gray-300 hover:text-white hover:bg-slate-700'
