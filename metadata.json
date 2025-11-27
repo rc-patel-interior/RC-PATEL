@@ -1,8 +1,5 @@
 {
   "name": "RC PATEL Civil & Interiors",
-  "description": "Premium construction, civil work, and POP interior design services with admin management and AI assistance.",
-  "requestFramePermissions": [
-    "camera",
-    "microphone"
-  ]
+  "description": "Premium construction, civil work, and POP interior design services with admin management.",
+  "requestFramePermissions": []
 }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { AIChat } from './components/AIChat';
 import { Home } from './pages/Home';
 import { Services } from './pages/Services';
 import { Gallery } from './pages/Gallery';
@@ -37,7 +36,6 @@ const Layout: React.FC<{
         {children}
       </main>
       {!isLoginPage && !isAdminRoute && <Footer />}
-      {!isLoginPage && !isAdminRoute && <AIChat />}
     </div>
   );
 };
